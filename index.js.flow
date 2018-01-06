@@ -110,6 +110,10 @@ type ContextualCallbackTest = TestImplementation<ContextualCallbackTestContext, 
  * Method Types
  */
 
+type TodoTestMethod = {
+	(name: string): void;
+}
+
 type ContextualTestMethod = {
 	(              implementation: ContextualTest): void;
 	(name: string, implementation: ContextualTest): void;
@@ -118,7 +122,7 @@ type ContextualTestMethod = {
 	before     : ContextualTestMethod;
 	after      : ContextualTestMethod;
 	skip       : ContextualTestMethod;
-	todo       : ContextualTestMethod;
+	todo       : TodoTestMethod;
 	failing    : ContextualTestMethod;
 	only       : ContextualTestMethod;
 	beforeEach : ContextualTestMethod;
@@ -135,7 +139,7 @@ type ContextualCallbackTestMethod = {
 	before     : ContextualCallbackTestMethod;
 	after      : ContextualCallbackTestMethod;
 	skip       : ContextualCallbackTestMethod;
-	todo       : ContextualCallbackTestMethod;
+	todo       : TodoTestMethod;
 	failing    : ContextualCallbackTestMethod;
 	only       : ContextualCallbackTestMethod;
 	beforeEach : ContextualCallbackTestMethod;
@@ -158,7 +162,7 @@ declare module.exports: {
 	before     : ContextualTestMethod;
 	after      : ContextualTestMethod;
 	skip       : ContextualTestMethod;
-	todo       : ContextualTestMethod;
+	todo       : TodoTestMethod;
 	failing    : ContextualTestMethod;
 	only       : ContextualTestMethod;
 	cb         : ContextualCallbackTestMethod;
